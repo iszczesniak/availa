@@ -7,7 +7,6 @@
 #include <boost/accumulators/accumulators.hpp>
 #include <boost/accumulators/statistics/stats.hpp>
 #include <boost/accumulators/statistics/mean.hpp>
-#include <boost/accumulators/statistics/error_of.hpp>
 #include <boost/accumulators/statistics/error_of_mean.hpp>
 #include <boost/asio/io_service.hpp>
 #include <boost/thread/thread.hpp>
@@ -85,10 +84,15 @@ run (args a, const std::list <dblp> &rqs, double seeds)
         }
     }
 
+  cout << "Done posting!" << endl;
+
   // This is needed here, so that all tasks finish.
   work.reset ();
+  cout << "After reset" << endl;
   threads.join_all ();
+  cout << "After join" << endl;
   ios.stop ();
+  cout << "After stop" << endl;
 }
 
 int
@@ -157,6 +161,8 @@ main (int argc, const char* argv[])
     {
       for (const auto &qp: rp.second)
         {
+          // To use this feature, we need error_of_mean.hpp, because
+          // it actually implements this calculation.
           typedef ba::tag::error_of <ba::tag::mean> eom_t;
           typedef ba::stats <ba::tag::mean, eom_t> stats_t;
           ba::accumulator_set <double, stats_t> acc;
