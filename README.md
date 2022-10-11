@@ -8,9 +8,11 @@ Woźna-Szcześniak, Interoperator fixed-mobile network sharing, 19th
 International Conference on Optical Network Design and Modeling
 (ONDM), pp. 192-197, May 2015
 
-<http://irkos.org/publications/ondm2015.pdf>
+<https://doi.org/10.1109/ONDM.2015.7127297>
 
-<http://irkos.org/publications/ondm2015-presentation.pdf>
+<https://irkos.org/pubs/ondm2015.pdf>
+
+<https://irkos.org/pubs/ondm2015-presentation.pdf>
 
 ## Download
 
